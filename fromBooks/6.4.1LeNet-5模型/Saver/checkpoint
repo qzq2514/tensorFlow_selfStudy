@@ -1,0 +1,4 @@
+model_checkpoint_path: "bestSample-201"
+all_model_checkpoint_paths: "bestSample-1"
+all_model_checkpoint_paths: "bestSample-101"
+all_model_checkpoint_paths: "bestSample-201"

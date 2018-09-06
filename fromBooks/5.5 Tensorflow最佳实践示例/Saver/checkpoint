@@ -1,0 +1,6 @@
+model_checkpoint_path: "bestSample-9001"
+all_model_checkpoint_paths: "bestSample-5001"
+all_model_checkpoint_paths: "bestSample-6001"
+all_model_checkpoint_paths: "bestSample-7001"
+all_model_checkpoint_paths: "bestSample-8001"
+all_model_checkpoint_paths: "bestSample-9001"

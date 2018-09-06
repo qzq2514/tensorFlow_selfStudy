@@ -1,0 +1,4 @@
+model_checkpoint_path: "mnist.ckpt-99"
+all_model_checkpoint_paths: "mnist.ckpt-85"
+all_model_checkpoint_paths: "mnist.ckpt-98"
+all_model_checkpoint_paths: "mnist.ckpt-99"
