@@ -23,6 +23,7 @@ features=tf.parse_single_example(
 
 #tf.decode_raw将字符串解析成图像对应的像素数组
 images=tf.decode_raw(features["image_raw"],tf.uint8)
+images_=tf.reshape(images,[28,28,-1])       #将原向量形式的像素数据转变为矩阵形式
 labels=tf.cast(features["label"],tf.int32)
 pixels=tf.cast(features["pixels"],tf.int32)
 
@@ -34,5 +35,7 @@ threads=tf.train.start_queue_runners(sess=sess,coord=coord)
 
 #一次读取十个样例,样例读完后从头读取
 for i in range(10):
-    image,label,pixel=sess.run([images,labels,pixels])
+    image,image_,label,pixel=sess.run([images,images_,labels,pixels])
+    print(image.shape)   #mnist数据集像素是展开的-长度为784的向量
+    print(image_.shape)
     print(label)
