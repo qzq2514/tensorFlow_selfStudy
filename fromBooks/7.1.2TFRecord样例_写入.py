@@ -32,6 +32,8 @@ print(num_examples)
 
 
 #开始写入
+
+#TFRecord可以将数据规定成统一的数据格式，便于后面对于数据的处理
 fileName="TFRecord_Dir/output.tfrecords"
 writer=tf.python_io.TFRecordWriter(fileName)
 
@@ -42,7 +44,7 @@ for ind in range(num_examples):
     #讲一个样例转化为tf.train.Features类型的Protocol Buffer,并将该信息写入这个数据结构
     example=tf.train.Example(features=tf.train.Features(feature={
         "pixels":_int64_feature(pixels),
-        "label":_int64_feature(np.argmax(labels[ind])),
+        "label":_int64_feature(np.argmax(labels[ind])),     #TFRecord数据属性的整型使用_int64_feature转换为合适类型
         "image_raw":_bytes_feature(image_raw)
     }))
     if ind<10:print(np.argmax(labels[ind]))
