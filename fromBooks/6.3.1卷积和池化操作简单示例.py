@@ -14,7 +14,8 @@ input_data=tf.get_variable(name="input",shape=[2,28,28,3],initializer=tf.truncat
 
 
 
-#tf.nn.conv2d实现卷积操作,前两个参数分别是输入的图片数据和过滤器，第三个参数是步长，虽然是4维的，但是
+#tf.nn.conv2d实现卷积操作,前两个参数分别是输入的图片数据和过滤器，第三个参数是步长，虽然是4维的，
+#但是目前就第二个第三个有效果，[1,2,2,1,]表示长宽步长都是2
 conv=tf.nn.conv2d(input=input_data,filter=filter_weights,strides=[1,2,2,1,],padding="SAME")#VALID:(2, 12, 12, 16)
                                                                                            #SAME:(2, 14, 14, 16)
 
